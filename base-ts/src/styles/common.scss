@@ -1,0 +1,101 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$game_box_width: 600px;
+$game_box_height: 800px;
+$game_box_border: 10px;
+$game_box_padding: 24px;
+
+$stage_width: 100%;
+$stage_height: calc($game_box_width - ($game_box_border + $game_box_padding) * 2);
+
+$food_width: 10px;
+$food_height: $food_width;
+
+$snake_width: 10px;
+$snake_height: $snake_width;
+
+#app {
+    width: 100%;
+    height: 100%;
+    background-color: antiquewhite;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 游戏机 */
+    #game-box {
+        width: $game_box_width;
+        height: $game_box_height;
+        padding: 12px $game_box_padding;
+        border: $game_box_border solid #000;
+        border-radius: 25px;
+        background-color: rgba(34, 195, 130, 0.3);
+
+        /* 当前关卡信息面板 */
+        #score-panel {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 24px;
+        }
+
+        /* 舞台 */
+        #stage {
+            border: 2px solid #000;
+            width: $stage_width;
+            height: $stage_height;
+
+            position: relative;
+
+            .food {
+                width: $food_width;
+                height: $food_height;
+
+                position: absolute;
+                left: 0;
+                top: 0;
+
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+                align-content: space-between;
+                transform: rotate(45deg);
+
+                & > div {
+                    
+                    width: 4px;
+                    height: 4px;
+                    background-color: #000;
+                }
+            }
+
+            .snake {
+                width: $snake_width;
+                height: $snake_height;
+                background-color: #000;
+
+                position: absolute;
+                left: calc($stage_width / 2);
+                top: calc($stage_height / 2);
+
+
+            }
+        }
+
+        /* 控制器 */
+        #controller {
+
+        }
+
+    }
+}
