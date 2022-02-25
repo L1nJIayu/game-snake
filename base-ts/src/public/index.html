@@ -8,27 +8,33 @@
 </head>
 <body>
     <div id="app">
+        <h1 id="game-title">贪吃蛇</h1>
         <div id="game-box">
             <div id="score-panel">
                 <div class="score">
                     <span>得分：</span>
-                    <span>1</span>
+                    <span id="score">0</span>
                 </div>
                 <div class="level">
                     <span>关卡：</span>
-                    <span>1</span>
+                    <span id="level">1</span>
                 </div>
             </div>
             <div id="stage">
-                <class class="food">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </class>
-                <div class="snake"></div>
+                <div id="snake">
+                    <div class="snake-head iconfont icon-snake-head-3"></div>
+                </div>
             </div>
-            <div id="controller"></div>
+            <div id="mask">
+                <div class="btn" id="continue-game-btn">继续</div>
+                <div class="btn" id="restart-game-btn">重新开始</div>
+                <div class="btn" id="start-game-btn">开始游戏</div>
+            </div>
+        </div>
+        <!-- <div id="controller"></div> -->
+        <div id="game-instruction">
+            <p>操作方式: </p>
+            <p>上: ↑/w 下: ↓/s 左: ←/a 右: →/d 暂停: 空格键</p>
         </div>
     </div>
 </body>

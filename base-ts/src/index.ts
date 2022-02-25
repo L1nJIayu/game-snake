@@ -1,25 +1,35 @@
 
 
 import './styles/common.scss'
+import './iconfont/iconfont.css'
 
-// class Counter {
-//     private initNum :number;
-
-//     constructor(initNum :number) {
-//         this.initNum = initNum
-//     }
-
-//     getInitNum() :number {
-//         return this.initNum
-//     }
-// }
+import Game from './modules/Game'
+import GameStatus from './enum/GameStatus'
 
 
 
-// let c1 :Counter = new Counter(1111111)
-// let result :number = c1.getInitNum()
+let game = new Game()
+game.init()
 
-// let p :HTMLHeadingElement = document.createElement('h1')
-// p.innerText = String(result)
 
-// document.body.appendChild(p)
+
+// 开始
+document.querySelector('#start-game-btn')!.addEventListener('click', () =>{
+    game.run()
+
+    game.game_status = GameStatus.PLAY
+    game.mask.hideMask()
+})
+
+// 继续
+document.querySelector('#continue-game-btn')!.addEventListener('click', () =>{
+    game.game_status = GameStatus.PLAY
+    game.mask.hideMask()
+})
+
+// 重新开始
+document.querySelector('#restart-game-btn')!.addEventListener('click', () =>{
+    game.restart()
+    game.mask.hideMask()
+})
+

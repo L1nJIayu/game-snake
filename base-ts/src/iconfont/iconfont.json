@@ -1,0 +1,51 @@
+{
+  "id": "3205726",
+  "name": "je-game-snake",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1897714",
+      "name": "snake",
+      "font_class": "snake-head-1",
+      "unicode": "e735",
+      "unicode_decimal": 59189
+    },
+    {
+      "icon_id": "5862073",
+      "name": "body",
+      "font_class": "snake-body-1",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "7485125",
+      "name": "snake_head",
+      "font_class": "snake-head-2",
+      "unicode": "e6f7",
+      "unicode_decimal": 59127
+    },
+    {
+      "icon_id": "11370880",
+      "name": "body",
+      "font_class": "snake-body-2",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "12232280",
+      "name": "icon_Snake",
+      "font_class": "snake-head-3",
+      "unicode": "e689",
+      "unicode_decimal": 59017
+    },
+    {
+      "icon_id": "12904451",
+      "name": "d_tail",
+      "font_class": "snake-tail-1",
+      "unicode": "e6fb",
+      "unicode_decimal": 59131
+    }
+  ]
+}

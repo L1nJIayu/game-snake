@@ -9,7 +9,7 @@ module.exports = {
     output: {
         filename: 'build.js',
         path: path.resolve(__dirname, 'dist'),
-        environment: {  // 兼容
+        environment: {  // 提高兼容性
             arrowFunction: false,
             const: false
         }
@@ -20,6 +20,10 @@ module.exports = {
                 test: /\.ts$/,
                 use: ['ts-loader'],
                 exclude: /node_modules/
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader', 'postcss-loader']
             },
             {
                 test: /\.scss$/,
@@ -33,5 +37,9 @@ module.exports = {
             template: './src/public/index.html'
         }),
         new CleanWebpackPlugin()
-    ]
+    ],
+    resolve: {
+       extensions: ['.js', '.ts', '.vue', '.json']
+    }
+    
 }

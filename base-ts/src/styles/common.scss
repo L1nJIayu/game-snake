@@ -7,16 +7,13 @@ body {
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-$game_box_width: 600px;
-$game_box_height: 800px;
 $game_box_border: 10px;
-$game_box_padding: 24px;
+$game_box_padding: 10px 25px 25px 25px;
 
-$stage_width: 100%;
-$stage_height: calc($game_box_width - ($game_box_border + $game_box_padding) * 2);
+$stage_width: 300px;
+$stage_height: $stage_width;
 
 $food_width: 10px;
 $food_height: $food_width;
@@ -30,17 +27,31 @@ $snake_height: $snake_width;
     background-color: antiquewhite;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
+    #game-title {
+        margin-bottom: 8px;
+    }
+
+    /* 游戏说明 */
+    #game-instruction {
+        border: 5px solid #000;
+        margin-top: 24px;
+        padding: 0 24px;
+        & > p {
+            line-height: 36px;
+        }
+    }
     /* 游戏机 */
     #game-box {
-        width: $game_box_width;
-        height: $game_box_height;
-        padding: 12px $game_box_padding;
+        padding: $game_box_padding;
         border: $game_box_border solid #000;
         border-radius: 25px;
         background-color: rgba(34, 195, 130, 0.3);
+        box-sizing: border-box;
+        position: relative;
 
         /* 当前关卡信息面板 */
         #score-panel {
@@ -56,6 +67,7 @@ $snake_height: $snake_width;
             height: $stage_height;
 
             position: relative;
+            // box-sizing: border-box;
 
             .food {
                 width: $food_width;
@@ -79,16 +91,71 @@ $snake_height: $snake_width;
                 }
             }
 
-            .snake {
-                width: $snake_width;
-                height: $snake_height;
+            #snake {
+
+                .snake-head {
+                    left: calc($stage_width / 2);
+                    top: calc($stage_height / 2);
+                    font-size: 20px;
+                }
+                .snake-body {
+                    font-size: 12px;
+                }
+
+                & > div {
+                    width: $snake_width;
+                    height: $snake_height;
+                    // background-color: #000;
+                    position: absolute;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                }
+
+
+            }
+        }
+
+        /* 遮罩层，游戏未开始时显示 */
+        #mask {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .7);
+
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+
+            .btn {
+                width: 100px;
+                text-align: center;
+                padding: 12px 16px;
+                margin-bottom: 12px;
+                border-radius: 25px;
                 background-color: #000;
+                color: #fff;
+                font-size: 18px;
+                cursor: pointer;
 
-                position: absolute;
-                left: calc($stage_width / 2);
-                top: calc($stage_height / 2);
+            }
+            .btn:hover {
+                font-size: 19px;
+                box-shadow: 0 0 15px #fff;
+            }
 
+            #continue-game-btn,
+            #restart-game-btn {
+                display: none;
 
+            }
+            #start-game-btn {
+                display: block;
             }
         }
 
