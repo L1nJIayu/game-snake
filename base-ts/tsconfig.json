@@ -4,7 +4,7 @@
     ],
     "exclude": ["node_modules"],
     "compilerOptions": {
-        "target": "ES5",
+        "target": "ESNext",
         "module": "ES6",
         "strict": true,
         "noEmitOnError": true
