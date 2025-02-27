@@ -27,6 +27,7 @@ jobs:
   # 构建工作
   build:
     runs-on: ubuntu-latest
+    working-directory: /base-ts
     defaults:
       run:
         working-directory: /base-ts
