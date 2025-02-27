@@ -40,10 +40,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          path: /base-ts
           cache: pnpm # 或 pnpm / yarn
       - name: Setup Pages
         uses: actions/configure-pages@v3 # 在工作流程自动配置GithubPages
+        with:
+          path: /base-ts
       - name: Install dependencies
         run: pnpm install # 或 pnpm install / yarn install / bun install
       - name: Build with VitePress
